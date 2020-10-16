@@ -1,7 +1,7 @@
 const createPlayerForm = document.getElementById("createPlayerForm") ;
 const updateForm = document.getElementById("updateForm");
 const readDiv = document.getElementById("readDiv");
-var updateID = 0;
+// var updateID = 0;
 let updateTrue=false;
 
 createPlayerForm.addEventListener('submit', function(){
@@ -129,7 +129,7 @@ function deletePlayer(id){
             event.preventDefault();
             // console.log(this.name.value);
             console.log(this.id.value);
-            let id= updateID;
+            // let id= updateID;
             const data = {
             id: this.id.value,
             name: this.name.value,

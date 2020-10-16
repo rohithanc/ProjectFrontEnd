@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>Bootstrap 4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+    <h1> Enter a player </h1>
+    <div>
+        <h3> CREATE </h3>
+        <form id="createPlayerForm">
+            <label for="nameInput">Name:</label>
+            <br>
+            <input id="nameInput" placeholder="Please enter your name" name="name" required/>
+            <br>
+            <label for="ageInput">Age:</label>
+            <input id="ageInput" placeholder="Please enter your age" name="age" required/>
+            <br>
+            <div class="form-group">
+                <label for="positionInput">Position</label>
+                <select class="form-control" id="positionInput" name="position">
+                  <option>Goalkeeper</option>
+                  <option>Defender</option>
+                  <option>Midfielder</option>
+                  <option>Striker</option>
+                </select>
+              </div>
+            <br>
+            <label for="goalsInput">Goals Scored Last Season</label>
+            <input id="goalsInput" name="goals"/>
+            <br>
+            <button id="submitPlayerInformation" type="submit" name="submitPlayer">Submit player information</button>
+        </form>
+        <br>
+        <h4> View Player information <h4>
+        <label for "Delete Player">DELETE PLAYER</label>
+        <input id = "Delete Player">
+    </div>
+    <div id="readDiv" class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+          <p class="card-text"></p>
+          <a href="#" class="btn btn-primary"></a>
+        </div>
+      </div>
+
+      <div class="updateForm">
+        <form id="updateForm">
+        <h5>Update Player </h5>
+        <input name="Name" id="nameUpdate" placeholder="Name">
+      </div>
+      <div class="updateForm">
+        <input name="Age" id="ageUpdate" placeholder="Age">
+      </div>
+      <div class="updateForm">                
+        <select class="form-control" id="positionUpdate" name="position">
+        <option>Goalkeeper</option>
+        <option>Defender</option>
+        <option>Midfielder</option>
+        <option>Striker</option>
+      </select>
+      </div>
+      <div class= "updateForm">
+        <input name="Previous Goals" id="goalsUpdate" placeholder="Previous Goals">
+      </div>
+      <!-- <button type="submit" class="modal_button" form="updateForm">Submit</button>
+      <button type="button" class="modal_button" data-dismiss="modal">Cancel</button> -->
+      <!-- <button onclick="updatePlayer()">Update</button>  -->
+      <button id="updatePlayer" type="submit" name="updatePlayer">Update Player</button>
+    </form>
+    <script src="player.js"></script>
+</body>
+</html>

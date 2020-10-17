@@ -48,30 +48,28 @@
         </div>
       </div>
 
-      <div class="updateForm">
+    <div class="updateForm">
         <form id="updateForm">
-        <h5>Update Player </h5>
-        <input name="Name" id="nameUpdate" placeholder="Name">
-      </div>
-      <div class="updateForm">
-        <input name="Age" id="ageUpdate" placeholder="Age">
-      </div>
-      <div class="updateForm">                
-        <select class="form-control" id="positionUpdate" name="position">
-        <option>Goalkeeper</option>
-        <option>Defender</option>
-        <option>Midfielder</option>
-        <option>Striker</option>
-      </select>
-      </div>
-      <div class= "updateForm">
-        <input name="Previous Goals" id="goalsUpdate" placeholder="Previous Goals">
-      </div>
-      <!-- <button type="submit" class="modal_button" form="updateForm">Submit</button>
-      <button type="button" class="modal_button" data-dismiss="modal">Cancel</button> -->
-      <!-- <button onclick="updatePlayer()">Update</button>  -->
-      <button id="updatePlayer" type="submit" name="updatePlayer">Update Player</button>
-    </form>
+            <h5>Update Player </h5>
+            <input name="id" id="playerId" placeholder="Player ID">
+            <input name="name" id="nameUpdate" placeholder="Name">
+            <div class="updateForm">
+                <input name="age" id="ageUpdate" placeholder="Age">
+            </div>
+            <div class="updateForm">                
+                <select class="form-control" id="positionUpdate" name="position">
+                    <option>Goalkeeper</option>
+                    <option>Defender</option>
+                    <option>Midfielder</option>
+                    <option>Striker</option>
+                </select>
+            </div>
+            <div class= "updateForm">
+                <input name="goals" id="goalsUpdate" placeholder="Previous Goals">
+            </div>
+            <button id="updatePlayer" type="submit" name="updatePlayer">Update Player</button>
+        </form>
+    </div>
     <script src="player.js"></script>
 </body>
 </html>

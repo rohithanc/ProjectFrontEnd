@@ -1,7 +1,6 @@
 const createPlayerForm = document.getElementById("createPlayerForm") ;
 const updateForm = document.getElementById("updateForm");
 const readDiv = document.getElementById("readDiv");
-// var updateID = 0;
 let updateTrue=false;
 
 createPlayerForm.addEventListener('submit', function(){
@@ -76,7 +75,7 @@ createPlayerForm.addEventListener('submit', function(){
                     updateButton.className= "card-link";
                     updateButton.innerText="Update";
                     updateButton.addEventListener("click", function() {
-                        updatePlayer(player.id)
+                        selectPlayer(player.id)
                     })
                     cardBody.appendChild(updateButton);
                 });
@@ -93,56 +92,18 @@ function deletePlayer(id){
         }).catch(error => console.error(error));
 }
 
-// // Update
-// function updatePlayer(id){
-// updateForm.addEventListener('submit', function (event){
-//     event.preventDefault();
-//     // console.log(this.name.value);
-//     console.log(this.id.value);
-//     const data = {
-//         id: this.id.value,
-//         name: this.name.value,
-//         age: this.age.value,
-//         position: this.position.value,
-//         goals: this.goals.value
-//     }
-//     console.log(data)
-
-//     fetch("http://localhost:8085/update" + id,{ //make request
-//         method: "PUT",
-//         body: JSON.stringify(data),
-//         headers: {
-//          'Content-Type':"application/json"
-//         } //open and send
-//     }).then(response => {       //receive response
-//         return response.json(); //Converts response body to json
-//     }).then(data => { //json data from previous .then()
-//         getAll();
-//         this.reset();
-//         console.log(data);
-//     }).catch(error => console.log(error));
-// });
-// }
-
-    async function PlayerInformation(){
-        updateForm.addEventListener('submit', function (event){
-            event.preventDefault();
-            // console.log(this.name.value);
-            console.log(this.id.value);
-            // let id= updateID;
-            const data = {
-            id: this.id.value,
-            name: this.name.value,
-            age: this.age.value,
-            position: this.position.value,
-            goals: this.goals.value
-            }
-        });
+updateForm.addEventListener('submit', function(event){
+    event.preventDefault();
+    console.log(this.name);
+    const data = {
+        id: this.id.value,
+        name: this.name.value,
+        age: this.age.value,
+        position: this.position.value,
+        goals: this.goals.value
     }
 
-    async function updatePlayer(id){
-        data = PlayerInformation();
-        await fetch("http://localhost:8085/update?id=" + id,{ //make request
+    fetch("http://localhost:8085/update?id=" + data.id,{ //make request
             method: "PUT",
             body: JSON.stringify(data),
             headers: {
@@ -155,5 +116,7 @@ function deletePlayer(id){
             this.reset;
             console.log(data);
         }).catch(error => console.log(error));
-
+});
+    function selectPlayer(id){
+        document.getElementById("playerId").value = id;
     }
